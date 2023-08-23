@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*,
+*::before,
+*::after {
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	background-color: #00181a;
+	font-family: 'Ubuntu', sans-serif;
+	height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#board {
+	display: grid;
+	grid-template-rows: 0.5fr 0.5fr repeat(3, 1fr) 0.8fr;
+	grid-template-columns: repeat(3, 1fr);
+	width: min(20em, 100vw);
+	height: min(33em, 100vh);
+	gap: 1em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.winner {
+	grid-area: 2/1/3/4;
+	font-size: 2.2em;
+	color:chartreuse;
+	text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+	width: 1em;
+	height: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.winner > img {
+	position: relative;
+	top: 0.2em;
+	width: 1.2em;
+	height: 1.2em;
+}
+
+.vs {
+	width: 1.5em !important;
+	height: 1.5em !important;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+.box,
+.restart,
+.undo,
+.reset,
+.wincell {
+	font-size: 3em;
+	background-color: hsl(184, 100%, 10%);
+	border-radius: 0.5em;
+	box-shadow: 1px 8px 0px 0px hsl(184, 100%, 3%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.wincell {
+	/* background-color:aqua; */
+	border: 0.2em solid chartreuse;
+}
+
+.stats {
+	padding: 0em 1em;
+	height: 70%;
+	border-radius: 0.6em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	color:hsl(184, 100%, 10%);
+	box-shadow: 1px 8px 0px 0px hsl(184, 100%, 3%);
+}
+
+.points {
+	padding: 0em 1.5rem;
+	font-size: 1.6em;
+}
+
+.stats[value="X"] {
+	background-color: #00ffff;
+}
+.stats[value="Ties"] {
+	background-color: rgb(82, 136, 136);
+}
+.stats[value="O"] {
+	background-color: rgb(237, 212, 17);
+}
+
+.restart, 
+.reset,
+.undo {
+	font-size: 1.3em;
+	font-weight: 700;
+	color:hsl(184, 100%, 10%);
+	background-color: chartreuse;
 }
