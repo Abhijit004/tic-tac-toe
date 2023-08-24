@@ -21,8 +21,8 @@ body {
 	display: grid;
 	grid-template-rows: 0.5fr 0.5fr repeat(3, 1fr) 0.8fr;
 	grid-template-columns: repeat(3, 1fr);
-	width: min(20em, 100vw);
-	height: min(33em, 100vh);
+	height: min(33em, 95vh);
+	width: calc(0.58 * min(33em, 95vh));
 	gap: 1em;
 }
 
@@ -45,9 +45,7 @@ img {
 	height: 1.2em;
 }
 
-.vs {
-	width: 1.5em !important;
-	height: 1.5em !important;
+img[class="vs"] {
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 }
@@ -85,7 +83,7 @@ img {
 }
 
 .points {
-	padding: 0em 1.5rem;
+	padding: 0em 0.8em;
 	font-size: 1.6em;
 }
 
@@ -93,10 +91,10 @@ img {
 	background-color: #00ffff;
 }
 .stats[value="Ties"] {
-	background-color: rgb(82, 136, 136);
+	background-color: hsl(90, 100%, 45%);
 }
 .stats[value="O"] {
-	background-color: rgb(237, 212, 17);
+	background-color: #edd411;
 }
 
 .restart, 
@@ -105,5 +103,5 @@ img {
 	font-size: 1.3em;
 	font-weight: 700;
 	color:hsl(184, 100%, 10%);
-	background-color: chartreuse;
+	background-color: hsl(90, 100%, 45%);
 }
