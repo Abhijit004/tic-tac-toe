@@ -12,7 +12,10 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content:center;
-	background-color: #00181a;
+	background-image : url("./bg.png");
+	background-size:cover;
+	background-position: center;
+	overflow: hidden;
 	font-family: 'Ubuntu', sans-serif;
 	height: 100vh;
 }
@@ -56,7 +59,7 @@ img[class="vs"] {
 .reset,
 .wincell {
 	font-size: 3em;
-	background-color: hsl(184, 100%, 10%);
+	background-color: #003033;
 	border-radius: 0.5em;
 	box-shadow: 1px 8px 0px 0px hsl(184, 100%, 3%);
 	display: flex;

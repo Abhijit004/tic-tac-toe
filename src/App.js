@@ -97,7 +97,7 @@ export default function App() {
 			})}
 			{["X", "Ties", "O"].map((value, i) => {
 				return (
-					<Stats id = {i} value={value} score={points[i]}/> 
+					<Stats key = {i} value={value} score={points[i]}/> 
 				)
 			})}
  		</div>
