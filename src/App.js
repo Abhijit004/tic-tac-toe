@@ -10,7 +10,7 @@ export default function App() {
 	const [gamePlay, setGamePlay] = useState([[boxes], [winData], [points]]);
 
 	function calcWinner(boxes) {
-		var newPoints = points.slice();
+		// var newPoints = points.slice();
 		const winCombo = [
 			[0, 1, 2], [3, 4, 5], [6, 7, 8],
 			[0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -21,9 +21,9 @@ export default function App() {
 			if (boxes[c[0]] && 
 				boxes[c[0]] === boxes[c[1]] && 
 				boxes[c[0]] === boxes[c[2]]) {
-					boxes[c[0]] === 'x'?newPoints[0]++:newPoints[2]++;
-					setPoints(newPoints);
-					gamePlay[2].push(newPoints);
+					// boxes[c[0]] === 'x'?newPoints[0]++:newPoints[2]++;
+					// setPoints(newPoints);
+					// gamePlay[2].push(newPoints);
 					return [boxes[c[0]], c];
 			}
 		} 
@@ -32,15 +32,17 @@ export default function App() {
 		for (let b of boxes) {
 			if (b === null) allFill = false;
 		} if (allFill) {
-			newPoints[1]++;
-			setPoints(newPoints);
-			gamePlay[2].push(newPoints);
+			// newPoints[1]++;
+			// setPoints(newPoints);
+			// gamePlay[2].push(newPoints);
 			return ['DW', ['null']]
 		} return [null, ['null']]
 	}
 
 	function crossOrDot(i) {
 		const newBoxes = boxes.slice();
+		const newPoints = points.slice();
+
 		if (calcWinner(newBoxes)[0] === null && newBoxes[i] === null) {
 			newBoxes[i] = xIsNext ? 'x':'o';
 			setBoxes(newBoxes);
@@ -48,8 +50,18 @@ export default function App() {
 			const curWinData = calcWinner(newBoxes);
 			setWinData(curWinData);
 			
+			if (curWinData[0] === 'DW') {
+				newPoints[1]++;
+			} else if (curWinData[0] === 'x') {
+				newPoints[0]++;
+			} else if (curWinData[0] === 'o') {
+				newPoints[2]++;
+			}
+			
+			setPoints(newPoints);
 			gamePlay[0].push(newBoxes);
 			gamePlay[1].push(curWinData);
+			gamePlay[2].push(newPoints);
 		}
 	}
 

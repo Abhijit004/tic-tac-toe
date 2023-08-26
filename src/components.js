@@ -42,7 +42,7 @@ export function Box({value, onBoxClick, isWinCell}) {
 export function Stats({value, score}) {
 	return (
 		<div className='stats' value={value}>
-			<span>{value}</span>
+			<span>&nbsp;{value} &nbsp; </span>
 			<span className='points'><b>{score}</b></span>
 		</div>
 	)
