@@ -13,7 +13,8 @@ A scoreboard for each player is maintained for every game, which is updated when
 - *Reset:* To reset the game along with the scoreboard.
 
 ## 🛰🚀 Deployment
-Something to write
+The project is deployed using [Vercel](https://vercel.com/), which was surprisingly very easy !😳.
+[Clicking here](https://vercel.com/) will redirect you to my game.
 
 ## 📃🖋 License
 This project is under [MIT license](./LICENSE).
