@@ -14,7 +14,7 @@ A scoreboard for each player is maintained for every game, which is updated when
 
 ## 🛰🚀 Deployment
 The project is deployed using [Vercel](https://vercel.com/), which was surprisingly very easy !😳.
-[Clicking here](https://vercel.com/) will redirect you to my game.
+[Clicking here](https://tic-tac-7sssu0s1f-abhijit004.vercel.app/) will redirect you to my game.
 
 ## 📃🖋 License
 This project is under [MIT license](./LICENSE).
